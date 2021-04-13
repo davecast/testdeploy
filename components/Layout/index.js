@@ -1,0 +1,19 @@
+import React from "react";
+
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <header className="Header">
+        <div className="Container">
+          <h1 className="Header__title">To do List</h1>
+        </div>
+      </header>
+      <div className="Main">{children}</div>
+      <footer className="Footer">
+        Con amor <span className="Footer__heart">❤</span>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
