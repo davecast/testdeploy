@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-// import TaskEdit from '@components/TaskEdit'
-// import TaskItem from '@components/TaskItem'
+import TaskEdit from "../TaskEdit";
+import TaskItem from "../TaskItem";
 
 const Task = ({ information, tasks, setTasks }) => {
   const [edit, setEdit] = useState(false);
@@ -11,25 +11,24 @@ const Task = ({ information, tasks, setTasks }) => {
   };
 
   return (
-    <p>Task List</p>
-    // <p>
-    //   {!edit ? (
-    //     <TaskItem
-    //       information={information}
-    //       tasks={tasks}
-    //       setTasks={setTasks}
-    //       handleEdit={handleEdit}
-    //     />
-    //   ) : (
-    //     <TaskEdit
-    //       _id={information._id || ''}
-    //       description={information.description || ''}
-    //       tasks={tasks}
-    //       setTasks={setTasks}
-    //       handleEdit={handleEdit}
-    //     />
-    //   )}
-    // </p>
+    <>
+      {!edit ? (
+        <TaskItem
+          information={information}
+          tasks={tasks}
+          setTasks={setTasks}
+          handleEdit={handleEdit}
+        />
+      ) : (
+        <TaskEdit
+          _id={information._id || ""}
+          description={information.description || ""}
+          tasks={tasks}
+          setTasks={setTasks}
+          handleEdit={handleEdit}
+        />
+      )}
+    </>
   );
 };
 
