@@ -1,9 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Hello from "../components/Hello";
+// import NewTodo from '@components/NewTodo'
+import TodoList from "../components/TodoList";
 
 const Home = () => {
-  return <Hello>Hola mundo!!</Hello>;
+  const [tasks, setTasks] = useState([]);
+  const [task, setTask] = useState("");
+  const [loadingTasks, setLoadingTasks] = useState(false);
+
+  return (
+    <div className="Tasker">
+      <div className="Container">
+        {/* <NewTodo
+          task={task}
+          setTask={setTask}
+          tasks={tasks}
+          setTasks={setTasks}
+        /> */}
+        <TodoList
+          tasks={tasks}
+          setTasks={setTasks}
+          loadingTasks={loadingTasks}
+          setLoadingTasks={setLoadingTasks}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Home;
