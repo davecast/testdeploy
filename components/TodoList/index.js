@@ -5,24 +5,24 @@ import Task from "../Task";
 import { getTasks } from "../../services/tasks";
 
 const TodoList = ({ tasks, setTasks, loadingTasks, setLoadingTasks }) => {
-  // useEffect(() => {
-  //   setLoadingTasks(true)
-  //   getTasks().then((res) => {
-  //     setTasks([...res.data.tasks] as any)
-  //     setLoadingTasks(false)
-  //   })
-  // }, [])
+  useEffect(() => {
+    setLoadingTasks(true);
+    getTasks().then((res) => {
+      setTasks([...res.data.tasks]);
+      setLoadingTasks(false);
+    });
+  }, []);
 
-  // if (loadingTasks) {
-  //   return <div>Loading...</div>
-  // }
+  if (loadingTasks) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <section className="TaskList">
       Todo List
-      {/* {tasks.length > 0 &&
+      {tasks.length > 0 &&
         tasks
-          .map(({ _id, description, status }: TTask) => {
+          .map(({ _id, description, status }) => {
             return (
               <Task
                 key={_id}
@@ -30,9 +30,9 @@ const TodoList = ({ tasks, setTasks, loadingTasks, setLoadingTasks }) => {
                 tasks={tasks}
                 setTasks={setTasks}
               />
-            )
+            );
           })
-          .reverse()} */}
+          .reverse()}
     </section>
   );
 };
