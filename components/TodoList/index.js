@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-// import Task from '@components/Task'
+import Task from "../Task";
 
-// import { getTasks } from '@services/tasks'
+import { getTasks } from "../../services/tasks";
 
 const TodoList = ({ tasks, setTasks, loadingTasks, setLoadingTasks }) => {
   // useEffect(() => {

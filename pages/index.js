@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// import NewTodo from '@components/NewTodo'
+import NewTodo from "../components/NewTodo";
 import TodoList from "../components/TodoList";
 
 const Home = () => {
@@ -11,12 +11,12 @@ const Home = () => {
   return (
     <div className="Tasker">
       <div className="Container">
-        {/* <NewTodo
+        <NewTodo
           task={task}
           setTask={setTask}
           tasks={tasks}
           setTasks={setTasks}
-        /> */}
+        />
         <TodoList
           tasks={tasks}
           setTasks={setTasks}
